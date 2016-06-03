@@ -38,9 +38,16 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Blocks\BrickBlock.cs" />
+    <Compile Include="Blocks\HiddenBlock.cs" />
+    <Compile Include="Blocks\IBlock.cs" />
+    <Compile Include="Blocks\QuestionBlock.cs" />
+    <Compile Include="Blocks\UsedBlock.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sprites\ISprite.cs" />
+    <Compile Include="Sprites\Blocks\QuestionBlockSprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
