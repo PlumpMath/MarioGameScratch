@@ -17,6 +17,14 @@ namespace MarioGameScratch.Factories
 
         private static BlockSpriteFactory instance = new BlockSpriteFactory();
 
+        private const int BlockLength = 32;
+
+        private const int CeilingBlockOffset = BlockLength * 0;
+        private const int UsedBlockOffset = BlockLength * 1;
+        private const int QuestionBlockOffset = BlockLength * 2;
+        private const int BrickBlockOffset = BlockLength * 3;
+        private const int FloorBlockOffset = BlockLength * 4;
+
         public static BlockSpriteFactory Instance
         {
             get
@@ -34,7 +42,7 @@ namespace MarioGameScratch.Factories
 
         public ISprite CreateQuestionBlockSprite()
         {
-            return new QuestionBlockSprite(blockSpriteSheet, new Rectangle(0, 0, 50, 50));
+            return new QuestionBlockSprite(blockSpriteSheet, new Rectangle(QuestionBlockOffset, 0, BlockLength, BlockLength));
         }
     }
 }
