@@ -1,5 +1,5 @@
 ﻿using MarioGameScratch.Factories;
-using MarioGameScratch.Sprites.Blocks;
+using MarioGameScratch.Sprites;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,8 +13,7 @@ namespace MarioGameScratch
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        QuestionBlockSprite qb;
-
+        ISprite qb;
 
         public Game1()
         {
@@ -44,6 +43,9 @@ namespace MarioGameScratch
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
+
+
+            qb = BlockSpriteFactory.Instance.CreateQuestionBlockSprite();
 
             // TODO: use this.Content to load your game content here
         }
@@ -79,6 +81,8 @@ namespace MarioGameScratch
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            qb.Draw(spriteBatch, new Vector2(50, 50));
 
             // TODO: Add your drawing code here
 
