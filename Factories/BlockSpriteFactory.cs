@@ -39,10 +39,20 @@ namespace MarioGameScratch.Factories
         {
             blockSpriteSheet = content.Load<Texture2D>("blocks");
         }
+        public ISprite CreateCeilingBlockSprite()
+        {
+            return CreateBlockSprite(CeilingBlockOffset);
+        }
 
         public ISprite CreateQuestionBlockSprite()
         {
-            return new QuestionBlockSprite(blockSpriteSheet, new Rectangle(QuestionBlockOffset, 0, BlockLength, BlockLength));
+            return CreateBlockSprite(QuestionBlockOffset);
         }
+
+        private BlockSprite CreateBlockSprite(int offset)
+        {
+            return new BlockSprite(blockSpriteSheet, new Rectangle(offset, 0, BlockLength, BlockLength));
+        }
+
     }
 }
