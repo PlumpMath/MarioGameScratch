@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace MarioGameScratch.Sprites.Blocks
 {
-    class QuestionBlockSprite : ISprite
+    class BlockSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public Rectangle Source { get; set; }
 
-        public QuestionBlockSprite(Texture2D texture, Rectangle source)
+        public BlockSprite(Texture2D texture, Rectangle source)
         {
             Texture = texture;
             Source = source;
